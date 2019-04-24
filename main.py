@@ -143,6 +143,7 @@ if __name__ == '__main__':
     predictions = model.predict(data_test.drop('PassengerId', axis=1))
 
     output = pd.DataFrame({'PassengerId': ids, 'Survived': predictions})
+    output.to_csv(r'dataset/output.csv', index=None, header=True)
 
     count: int = 0
     for i in range(0, len(data_test)):
